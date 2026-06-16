@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AutoAuxilio · Cuenta confirmada</title>
+<style>
+  :root{color-scheme:light dark}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:-apple-system,system-ui,Segoe UI,Roboto,sans-serif;
+    background:linear-gradient(160deg,#0B1220 0%,#111827 100%);
+    color:#E2E8F0;display:flex;align-items:center;justify-content:center;padding:24px;
+  }
+  .card{
+    width:100%;max-width:440px;background:#0F172A;border:1px solid #1f2937;border-radius:20px;
+    padding:36px 28px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);
+  }
+  .badge{
+    width:84px;height:84px;border-radius:50%;margin:0 auto 18px;
+    background:linear-gradient(135deg,#3B82F6,#1D4ED8);
+    display:flex;align-items:center;justify-content:center;font-size:44px;
+  }
+  h1{font-size:24px;margin:0 0 10px;color:#fff}
+  p{font-size:15px;line-height:1.6;color:#94a3b8;margin:0 0 16px}
+  .btn{
+    display:inline-block;width:100%;padding:14px 20px;border-radius:12px;
+    background:linear-gradient(135deg,#3B82F6,#1D4ED8);color:#fff;font-weight:700;
+    text-decoration:none;font-size:16px;margin-top:8px;
+  }
+  .muted{font-size:13px;color:#64748b;margin-top:18px}
+  .brand{margin-top:22px;font-size:12px;color:#64748b}
+  .brand b{color:#5B8DEF}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">✓</div>
+    <h1>¡Felicidades! Tu cuenta fue confirmada</h1>
+    <p>
+      Gracias por registrarte en <b style="color:#cbd5e1">AutoAuxilio</b>. Tu correo quedó verificado
+      y tu cuenta ya está activa. A partir de ahora podrás pedir o brindar asistencia en carretera
+      de forma rápida y segura.
+    </p>
+    <p>Vuelve a la aplicación e inicia sesión para comenzar.</p>
+    <a class="btn" id="openApp" href="autoauxilio://">Abrir AutoAuxilio</a>
+    <div class="muted">Si el botón no abre la app, ábrela manualmente desde tu teléfono e inicia sesión con tu correo.</div>
+    <div class="brand">Hecho por <b>Zenti</b></div>
+  </div>
+  <script>
+    // Reenvía los tokens (si los hay) al deep link de la app para abrir sesión.
+    var a = document.getElementById('openApp');
+    if (location.hash) a.href = 'autoauxilio://' + location.hash;
+  </script>
+</body>
+</html>
